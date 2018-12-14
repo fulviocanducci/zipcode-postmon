@@ -4,14 +4,17 @@ class City
 {
 	private $area_km;
 	private $code_ibge;
+    private $name;
 
     /**
      * City constructor.
-     * @param $area_km
-     * @param $code_ibge
+     * @param null $name
+     * @param null $areaKm
+     * @param null $codeIbge
      */
-    public function __construct($areaKm = null, $codeIbge = null)
+    public function __construct($name = null, $areaKm = null, $codeIbge = null)
     {
+        $this->name = $name;
         $this->area_km = $areaKm;
         $this->code_ibge = $codeIbge;
     }
@@ -33,5 +36,3 @@ class City
     }
 
 }
-
-/*{"area_km2": "477,673", "codigo_ibge": "3539202"}*/

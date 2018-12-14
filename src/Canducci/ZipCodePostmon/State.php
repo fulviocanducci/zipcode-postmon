@@ -5,23 +5,24 @@ class State
 	private $area_km;
 	private $code_ibge;
 	private $name;
+	private $full_name;
 
     /**
      * State constructor.
-     * @param $name
-     * @param $areaKm
-     * @param $codeIbge
+     * @param null $name
+     * @param null $areaKm
+     * @param null $codeIbge
      */
-    public function __construct($name, $areaKm, $codeIbge)
+    public function __construct($name = null, $fullName = null,$areaKm = null, $codeIbge = null)
     {
         $this->area_km = $areaKm;
         $this->code_ibge = $codeIbge;
         $this->name = $name;
+        $this->full_name = $fullName;
     }
 
-
     /**
-     * @return mixed
+     * @return null
      */
     public function getAreaKm()
     {
@@ -29,7 +30,7 @@ class State
     }
 
     /**
-     * @return mixed
+     * @return null
      */
     public function getCodeIbge()
     {
@@ -37,15 +38,20 @@ class State
     }
 
     /**
-     * @return mixed
+     * @return null
      */
     public function getName()
     {
         return $this->name;
     }
 
-}
+    /**
+     * @return null
+     */
+    public function getFullName()
+    {
+        return $this->full_name;
+    }
 
-/*
-"estado_info": {"area_km2": "248.221,996", "codigo_ibge": "35", "nome": "S\u00e3o Paulo"}
-*/
+
+}

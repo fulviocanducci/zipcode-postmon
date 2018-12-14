@@ -3,7 +3,6 @@
 class ZipCode
 {
 	private $district;
-	private $city;
 	private $number;
 	private $state;
 	private $city;
