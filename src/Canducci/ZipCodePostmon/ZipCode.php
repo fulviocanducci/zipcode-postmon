@@ -6,24 +6,29 @@ class ZipCode
 	private $number;
 	private $state;
 	private $city;
+    private $complement;
+    private $address;
 
     /**
      * ZipCode constructor.
-     * @param null $number
-     * @param null $district
-     * @param null $city
-     * @param null $state
+     * @param $number
+     * @param $district
+     * @param $complement
+     * @param City $city
+     * @param State $state
      */
-    public function __construct($number = null, $district = null, $city = null, $state = null)
+    public function __construct($number, $district, $address, $complement, City $city, State $state)
     {
         $this->district = $district;
         $this->city = $city;
         $this->number = $number;
         $this->state = $state;
+        $this->complement = $complement;
+        $this->address = $address;
     }
 
     /**
-     * @return null
+     * @return mixed
      */
     public function getDistrict()
     {
@@ -31,7 +36,7 @@ class ZipCode
     }
 
     /**
-     * @return null
+     * @return mixed
      */
     public function getCity()
     {
@@ -39,7 +44,7 @@ class ZipCode
     }
 
     /**
-     * @return null
+     * @return mixed
      */
     public function getNumber()
     {
@@ -47,17 +52,27 @@ class ZipCode
     }
 
     /**
-     * @return null
+     * @return mixed
      */
     public function getState()
     {
         return $this->state;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getComplement()
+    {
+        return $this->complement;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
 }
-
-
-
-/*{"bairro": "", "cidade": "Pirapozinho", "estado_info": {"area_km2": "248.221,996",
- "codigo_ibge": "35", "nome": "S\u00e3o Paulo"}, "cep": "19200000",
-"cidade_info": {"area_km2": "477,673", "codigo_ibge": "3539202"}, "estado": "SP"}*/

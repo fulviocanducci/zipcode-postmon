@@ -24,7 +24,7 @@
       "Canducci\\ZipCodePostmon\\": "src/Canducci/ZipCodePostmon/"
     },
     "files":[
-      "src/Canducci/ZipCodePostmon/ZipCodeResultHelper.php"
+      "src/Canducci/ZipCodePostmon/ZipCodeHelper.php"
     ]
   }
 }

@@ -2,10 +2,10 @@
 
 use Illuminate\Support\Facades\Facade;
 
-class ZipCodeResult extends Facade
+class ZipCodeRequest extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'Canducci\ZipCodePostmon\ZipCodeResult';
+        return 'Canducci\ZipCodePostmon\ZipCodeRequest';
     }
 }

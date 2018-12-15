@@ -1,7 +1,7 @@
 <?php namespace Canducci\ZipCodePostmon\Providers;
 
 use Canducci\ZipCodePostmon\Client;
-use Canducci\ZipCodePostmon\ZipCodeResult;
+use Canducci\ZipCodePostmon\ZipCodeRequest;
 use Illuminate\Support\ServiceProvider;
 
 class ZipCodeProvider extends ServiceProvider
@@ -16,7 +16,7 @@ class ZipCodeProvider extends ServiceProvider
         {
             return new Client();
         });
-        $this->app->singleton('Canducci\ZipCodePostmon\ZipCodeResult', function($app)
+        $this->app->singleton('Canducci\ZipCodePostmon\ZipCodeRequest', function($app)
         {
             return new ZipCodeResult($app['Canducci\ZipCodePostmon\Client']);
         });
