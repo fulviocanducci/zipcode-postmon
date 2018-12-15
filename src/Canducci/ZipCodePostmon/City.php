@@ -2,8 +2,8 @@
 
 class City
 {
-	private $area_km;
-	private $code_ibge;
+    private $area_km;
+    private $code_ibge;
     private $name;
 
     /**

@@ -2,10 +2,10 @@
 
 class ZipCode
 {
-	private $district;
-	private $number;
-	private $state;
-	private $city;
+    private $district;
+    private $number;
+    private $state;
+    private $city;
     private $complement;
     private $address;
 

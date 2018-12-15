@@ -12,7 +12,7 @@ if (!function_exists('zipcode'))
         $instance = (new Canducci\ZipCodePostmon\ZipCodeRequest(new Canducci\ZipCodePostmon\Client()));
         if ($number)
         {
-        	return $instance->find($number);
+            return $instance->find($number);
         }
         return $instance;
     }

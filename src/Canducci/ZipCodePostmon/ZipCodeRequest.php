@@ -36,18 +36,18 @@ class ZipCodeRequest
 
                 if ($this->isExistProperty($result, 'cidade_info'))
                 {
-                    $cidade_area_km2 = $this->getValueOrDefault($result->cidade_info, 'area_km2');
-                    $cidade_codigo_ibge = $this->getValueOrDefault($result->cidade_info, 'codigo_ibge');
+                    $city_area_km2 = $this->getValueOrDefault($result->cidade_info, 'area_km2');
+                    $city_codigo_ibge = $this->getValueOrDefault($result->cidade_info, 'codigo_ibge');
                 }
-                $city = new City($cityName, $cidade_area_km2, $cidade_codigo_ibge);
+                $city = new City($cityName, $city_area_km2, $city_codigo_ibge);
 
                 if ($this->isExistProperty($result, 'estado_info'))
                 {
-                    $estado_name = $this->getValueOrDefault($result->estado_info, 'nome');
-                    $estado_area_km2 = $this->getValueOrDefault($result->estado_info, 'area_km2');
-                    $estado_codigo_ibge = $this->getValueOrDefault($result->estado_info, 'codigo_ibge');
+                    $state_name = $this->getValueOrDefault($result->estado_info, 'nome');
+                    $state_area_km2 = $this->getValueOrDefault($result->estado_info, 'area_km2');
+                    $state_codigo_ibge = $this->getValueOrDefault($result->estado_info, 'codigo_ibge');
                 }
-                $state = new State($stateName, $estado_name, $estado_area_km2, $estado_codigo_ibge);
+                $state = new State($stateName, $state_name, $state_area_km2, $state_codigo_ibge);
 
                 $zipCode = new ZipCode($number, $district, $address, $complement, $city, $state);
 

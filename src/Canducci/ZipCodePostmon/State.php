@@ -2,10 +2,10 @@
 
 class State
 {
-	private $area_km;
-	private $code_ibge;
-	private $name;
-	private $full_name;
+    private $area_km;
+    private $code_ibge;
+    private $name;
+    private $full_name;
 
     /**
      * State constructor.
