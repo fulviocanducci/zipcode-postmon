@@ -63,7 +63,6 @@ class ZipCodeTest extends TestCase
         $instance->find('');
     }
 
-
     /**
      * @expectedException Exception
      */
