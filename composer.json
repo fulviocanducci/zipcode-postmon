@@ -26,5 +26,6 @@
     "files":[
       "src/Canducci/ZipCodePostmon/ZipCodeHelper.php"
     ]
-  }
+  },
+  "minimum-stability": "dev"
 }
