@@ -1,5 +1,7 @@
 <?php namespace Canducci\ZipCodePostmon;
 
+use Exception;
+
 class ZipCodeRequest
 {
     private $url = "http://api.postmon.com.br/v1/cep/";
@@ -57,16 +59,32 @@ class ZipCodeRequest
         return null;
     }
 
+    /**
+     * @param $object
+     * @param $name
+     * @return bool
+     */
     private function isExistProperty($object, $name)
     {
         return property_exists($object, $name);
     }
 
+    /**
+     * @param $object
+     * @param $name
+     * @param string $default
+     * @return string
+     */
     private function getValueOrDefault($object, $name, $default = '')
     {
         return $this->isExistProperty($object, $name) ? $object->$name : $default;
     }
 
+    /**
+     * @param $value
+     * @return bool
+     * @throws Exception
+     */
     private function isValid($value)
     {
         if (mb_strlen($value) === 8 && preg_match('/^[0-9]{8}$/', $value)) return true;
@@ -75,6 +93,10 @@ class ZipCodeRequest
         throw new Exception("ZipCode Format Invalid, example: 01414001 or 01.414-001 or 01414-001");
     }
 
+    /**
+     * @param $value
+     * @return mixed
+     */
     private function onlyNumber($value)
     {
         return str_replace(array('.','-'),'', $value);

@@ -1,5 +1,7 @@
 <?php namespace Canducci\ZipCodePostmon;
 
+use Exception;
+
 class Client
 {
     public function getJson($url)
@@ -11,15 +13,16 @@ class Client
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-            if (!$ch)
-            {
-                throw new Exception("Error Processing Request", 1);
-            }
             $json = curl_exec($ch);
+            $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            if ($httpCode != 200)
+            {
+                throw new Exception("Error Processing Request", $httpCode);
+            }
             curl_close($ch);
             return $json;
         }
-        catch (\Exception $ex)
+        catch (Exception $ex)
         {
             throw $ex;
         }
