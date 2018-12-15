@@ -16,7 +16,7 @@ notifications:
 
 before_script:
   - composer self-update
-  - composer install --prefer-source --no-interaction
+  - composer install --prefer-source --no-interaction --lock
 
 script:
   - vendor/bin/phpspec run
