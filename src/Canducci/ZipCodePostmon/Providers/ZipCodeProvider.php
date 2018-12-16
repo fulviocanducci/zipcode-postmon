@@ -18,7 +18,7 @@ class ZipCodeProvider extends ServiceProvider
         });
         $this->app->singleton('Canducci\ZipCodePostmon\ZipCodeRequest', function($app)
         {
-            return new ZipCodeResult($app['Canducci\ZipCodePostmon\Client']);
+            return new ZipCodeRequest($app['Canducci\ZipCodePostmon\Client']);
         });
     }
 }
