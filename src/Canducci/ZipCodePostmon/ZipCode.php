@@ -28,6 +28,29 @@ class ZipCode
     }
 
     /**
+     * @return array
+     */
+    public function toArray()
+    {
+        return array(
+            'district' => $this->district,
+            'number' => $this->number,
+            'state' => $this->state->toArray(),
+            'city' => $this->city->toArray(),
+            'complement' => $this->complement,
+            'address' => $this->address,
+        );
+    }
+
+    /**
+     * @return string
+     */
+    public function toJson()
+    {
+        return json_encode($this->toArray());
+    }
+
+    /**
      * @return mixed
      */
     public function getDistrict()

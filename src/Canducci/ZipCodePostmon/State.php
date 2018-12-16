@@ -2,10 +2,10 @@
 
 class State
 {
-    private $area_km;
-    private $code_ibge;
+    private $areaKm;
+    private $codeIbge;
     private $name;
-    private $full_name;
+    private $fullName;
 
     /**
      * State constructor.
@@ -15,10 +15,31 @@ class State
      */
     public function __construct($name = null, $fullName = null,$areaKm = null, $codeIbge = null)
     {
-        $this->area_km = $areaKm;
-        $this->code_ibge = $codeIbge;
+        $this->areaKm = $areaKm;
+        $this->codeIbge = $codeIbge;
         $this->name = $name;
-        $this->full_name = $fullName;
+        $this->fullName = $fullName;
+    }
+
+    /**
+     * @return array
+     */
+    public function toArray()
+    {
+        return array(
+            'areaKm' => $this->areaKm,
+            'codeIbge' => $this->codeIbge,
+            'name' => $this->name,
+            'fullName' => $this->fullName
+        );
+    }
+
+    /**
+     * @return string
+     */
+    public function toJson()
+    {
+        return json_encode($this->toArray());
     }
 
     /**
@@ -26,7 +47,7 @@ class State
      */
     public function getAreaKm()
     {
-        return $this->area_km;
+        return $this->areaKm;
     }
 
     /**
@@ -34,7 +55,7 @@ class State
      */
     public function getCodeIbge()
     {
-        return $this->code_ibge;
+        return $this->codeIbge;
     }
 
     /**
@@ -50,7 +71,7 @@ class State
      */
     public function getFullName()
     {
-        return $this->full_name;
+        return $this->fullName;
     }
 
     /**

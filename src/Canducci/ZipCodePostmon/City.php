@@ -2,8 +2,8 @@
 
 class City
 {
-    private $area_km;
-    private $code_ibge;
+    private $areaKm;
+    private $codeIbge;
     private $name;
 
     /**
@@ -15,8 +15,28 @@ class City
     public function __construct($name = null, $areaKm = null, $codeIbge = null)
     {
         $this->name = $name;
-        $this->area_km = $areaKm;
-        $this->code_ibge = $codeIbge;
+        $this->areaKm = $areaKm;
+        $this->codeIbge = $codeIbge;
+    }
+
+    /**
+     * @return array
+     */
+    public function toArray()
+    {
+        return array(
+            'areaKm' => $this->areaKm,
+            'codeIbge' => $this->codeIbge,
+            'name' => $this->name
+        );
+    }
+
+    /**
+     * @return string
+     */
+    public function toJson()
+    {
+        return json_encode($this->toArray());
     }
 
     /**
@@ -24,7 +44,7 @@ class City
      */
     public function getAreaKm()
     {
-        return $this->area_km;
+        return $this->areaKm;
     }
 
     /**
@@ -32,7 +52,7 @@ class City
      */
     public function getCodeIbge()
     {
-        return $this->code_ibge;
+        return $this->codeIbge;
     }
 
     /**
@@ -43,4 +63,5 @@ class City
     {
         return $this->$name;
     }
+
 }
