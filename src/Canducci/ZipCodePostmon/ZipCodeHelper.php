@@ -9,7 +9,14 @@ if (!function_exists('zipcode'))
      */
     function zipcode($number = null)
     {
-        $instance = (new Canducci\ZipCodePostmon\ZipCodeRequest(new Canducci\ZipCodePostmon\Client()));
+        if (function_exists('app')) // only Laravel
+        {
+            $instance = app('Canducci\ZipCodePostmon\ZipCodeRequest');
+        }
+        else
+        {
+            $instance = (new Canducci\ZipCodePostmon\ZipCodeRequest(new Canducci\ZipCodePostmon\Client()));
+        }
         if ($number)
         {
             return $instance->find($number);
