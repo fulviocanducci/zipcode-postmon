@@ -35,4 +35,12 @@ class City
         return $this->code_ibge;
     }
 
+    /**
+     * @param string $name
+     * @return mixed
+     */
+    public function __get($name)
+    {
+        return $this->$name;
+    }
 }

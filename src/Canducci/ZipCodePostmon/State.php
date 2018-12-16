@@ -53,5 +53,13 @@ class State
         return $this->full_name;
     }
 
+    /**
+     * @param string $name
+     * @return mixed
+     */
+    public function __get($name)
+    {
+        return $this->$name;
+    }
 
 }
