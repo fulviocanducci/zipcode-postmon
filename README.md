@@ -3,10 +3,9 @@
 #### Web Service Postmon ZipCode - Github https://github.com/PostmonAPI/postmon
 
 [![Build Status](https://travis-ci.org/fulviocanducci/zipcode-postmon.svg?branch=master)](https://travis-ci.org/fulviocanducci/zipcode-postmon)
-
 [![](https://img.shields.io/packagist/v/canducci/zipcodepostmon.svg)](https://packagist.org/packages/canducci/zipcodepostmon)
 
-### Required setup
+## Required setup
 
 In the `require` key of `composer.json` file add the following
 
@@ -35,7 +34,7 @@ At the end of `config/app.php` add `'ZipCodeRequest' => 'Canducci\ZipCodePostmon
 
 'aliases' => array(
     ...,
-    'ZipCodeRequest'   => Canducci\ZipCode\Facades\ZipCode::class,
+    'ZipCodeRequest' => Canducci\ZipCode\Facades\ZipCode::class,
 ),
 
 ```
