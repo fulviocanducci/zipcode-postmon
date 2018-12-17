@@ -54,6 +54,20 @@ class ZipCodeTest extends TestCase
         $this->assertInstanceOf('Canducci\ZipCodePostmon\ZipCode', $result);
     }
 
+    public function testZipCodeToArrayInstance()
+    {
+        $instance = $this->getZipCodeRequestInstance();
+        $result = $instance->find('01414000');
+        $this->assertInternalType('array',$result->toArray());
+    }
+
+    public function testZipCodeToJsonOfString()
+    {
+        $instance = $this->getZipCodeRequestInstance();
+        $result = $instance->find('01414000');
+        $this->assertJson($result->toJson());
+    }
+
     /**
      * @expectedException Exception
      */
