@@ -96,7 +96,7 @@ $zipCodeResult = zipcode()->find('01414000'); // Helper
 
 - _Return_
 
-The return can be null or class instance ZipCode Object (`Canducci\ZipCodePostMon\ZipCode`)
+The return can be null or class instance `ZipCode` `Object` (`Canducci\ZipCodePostMon\ZipCode`)
 
 
 - _Assessor Methods_
