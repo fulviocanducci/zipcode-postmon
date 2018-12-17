@@ -43,22 +43,22 @@ At the end of `config/app.php` add `'ZipCodeRequest' => 'Canducci\ZipCodePostmon
 
 To use is very simple, pass the ZIP and calls the various types of returns, like this:
 
-__Package ZipCode__
-
 #### Facade
 
-__Add namespace:__
+- _Add namespace:_
 
 ```PHP
 use Canducci\ZipCodePostmon\Facades\ZipCodeRequest;
 ```
-__Code Example__
+- _Code Example_
 
 ```PHP
 $zipCodeResult = ZipCodeRequest::find('01414-001');
 ```
 
 #### Helper
+
+- _Code Example_
 
 ```PHP
 $zipCodeResult = zipcode('01414000'); 
@@ -68,13 +68,13 @@ $zipCodeResult = zipcode()->find('01414000');
 
 #### Injection
 
-__Add Namespace__
+- _Add Namespace_
 
 ```PHP
 use Canducci\ZipCodePostmon\ZipCodeRequest;
 
 ```
-__Code Example__
+- _Code Example_
 
 ```PHP
 public function index(ZipCodeRequest $zipcode)
@@ -85,7 +85,7 @@ public function index(ZipCodeRequest $zipcode)
 
 ## Summary of How to Use
 
-__Code__
+- __Code__
 
 ```PHP
 $zipCodeResult = ZipCode::find('01414000'); //Facade
