@@ -17,7 +17,7 @@ class Client
             $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
             if ($httpCode != 200)
             {
-                throw new Exception("Error Processing Request", $httpCode);
+                throw new Exception("Error Processing Request - Code Error: {$httpCode}", $httpCode);
             }
             curl_close($ch);
             return $json;
