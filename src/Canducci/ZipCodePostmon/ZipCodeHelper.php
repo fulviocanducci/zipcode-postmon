@@ -9,7 +9,7 @@ if (!function_exists('zipcode'))
      */
     function zipcode($number = null)
     {
-        if (function_exists('app')) // only Laravel
+        if (function_exists('app')) // Laravel
         {
             $instance = app('Canducci\ZipCodePostmon\ZipCodeRequest');
         }

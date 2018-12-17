@@ -35,21 +35,26 @@ class ZipCodeRequest
                 $cityName = $this->getValueOrDefault($result, 'cidade');
                 $stateName = $this->getValueOrDefault($result, 'estado');
                 $address = $this->getValueOrDefault($result, 'logradouro');
+                $cityAreaKm2 = '';
+                $cityCodeIbge = '';
+                $stateFullName = '';
+                $stateAreaKm2 = '';
+                $stateCodeIbge = '';
 
                 if ($this->isExistProperty($result, 'cidade_info'))
                 {
-                    $city_area_km2 = $this->getValueOrDefault($result->cidade_info, 'area_km2');
-                    $city_codigo_ibge = $this->getValueOrDefault($result->cidade_info, 'codigo_ibge');
+                    $cityAreaKm2 = $this->getValueOrDefault($result->cidade_info, 'area_km2');
+                    $cityCodeIbge = $this->getValueOrDefault($result->cidade_info, 'codigo_ibge');
                 }
-                $city = new City($cityName, $city_area_km2, $city_codigo_ibge);
+                $city = new City($cityName, $cityAreaKm2, $cityCodeIbge);
 
                 if ($this->isExistProperty($result, 'estado_info'))
                 {
-                    $state_name = $this->getValueOrDefault($result->estado_info, 'nome');
-                    $state_area_km2 = $this->getValueOrDefault($result->estado_info, 'area_km2');
-                    $state_codigo_ibge = $this->getValueOrDefault($result->estado_info, 'codigo_ibge');
+                    $stateFullName = $this->getValueOrDefault($result->estado_info, 'nome');
+                    $stateAreaKm2 = $this->getValueOrDefault($result->estado_info, 'area_km2');
+                    $stateCodeIbge = $this->getValueOrDefault($result->estado_info, 'codigo_ibge');
                 }
-                $state = new State($stateName, $state_name, $state_area_km2, $state_codigo_ibge);
+                $state = new State($stateName, $stateFullName, $stateAreaKm2, $stateCodeIbge);
 
                 $zipCode = new ZipCode($number, $district, $address, $complement, $city, $state);
 

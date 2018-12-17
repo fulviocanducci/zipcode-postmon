@@ -56,6 +56,14 @@ class City
     }
 
     /**
+     * @return null
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
      * @param string $name
      * @return mixed
      */
