@@ -1,0 +1,19 @@
+# see http://about.travis-ci.org/docs/user/languages/php/ for more hints
+language: php
+
+php:  
+  - hhvm
+  - nightly
+
+notifications:
+  email:
+    recipients:
+      - netdragoon@outlook.com
+    on_success: always
+
+before_script:
+  - composer self-update
+  - composer install --prefer-source --no-interaction --dev
+
+script:
+  - vendor/bin/phpspec run
