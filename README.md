@@ -115,6 +115,7 @@ $zipCodeResult->getState()->getAreaKm() // 248.221,996
 $zipCodeResult->getState()->getCodeIbge() // 35
 $zipCodeResult->getState()->getName() // SP
 $zipCodeResult->getState()->getFullName() // São Paulo
+$zipCodeResult->getClient() // Empty ZipCode Extra
 ````
 
 _Or_
@@ -133,6 +134,7 @@ $zipCodeResult->state->areaKm // 248.221,996
 $zipCodeResult->state->codeIbge // 35
 $zipCodeResult->state->name // SP
 $zipCodeResult->state->fullName // São Paulo
+$zipCodeResult->client // Empty ZipCode Extra
 ````
 
 - _Methods toArray and toJson_
@@ -162,6 +164,7 @@ Array
 
     [complement] => até 1048 - lado par
     [address] => Rua Haddock Lobo
+    [client] =>
 )
 ````
 
@@ -182,6 +185,7 @@ $jsonResult = $zipCodeResult->toJson();
         "name": "S\u00e3o Paulo"
     },
     "complement": "at\u00e9 1048 - lado par",
-    "address": "Rua Haddock Lobo"
+    "address": "Rua Haddock Lobo",
+    "client": ""
 }
 ````

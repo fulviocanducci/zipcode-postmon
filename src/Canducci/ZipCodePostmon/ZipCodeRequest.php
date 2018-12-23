@@ -34,7 +34,11 @@ class ZipCodeRequest
                 $district = $this->getValueOrDefault($result, 'bairro');
                 $cityName = $this->getValueOrDefault($result, 'cidade');
                 $stateName = $this->getValueOrDefault($result, 'estado');
-                $address = $this->getValueOrDefault($result, 'logradouro');
+                $address = $this->getValueOrDefault($result, 'logradouro', null);
+                if (is_null($address))
+                {
+                    $address = $this->getValueOrDefault($result, 'endereco');
+                }
                 $client = $this->getValueOrDefault($result, 'cliente');
                 $cityAreaKm2 = '';
                 $cityCodeIbge = '';
