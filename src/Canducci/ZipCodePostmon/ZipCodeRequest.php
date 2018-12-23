@@ -35,6 +35,7 @@ class ZipCodeRequest
                 $cityName = $this->getValueOrDefault($result, 'cidade');
                 $stateName = $this->getValueOrDefault($result, 'estado');
                 $address = $this->getValueOrDefault($result, 'logradouro');
+                $client = $this->getValueOrDefault($result, 'cliente');
                 $cityAreaKm2 = '';
                 $cityCodeIbge = '';
                 $stateFullName = '';
@@ -56,7 +57,7 @@ class ZipCodeRequest
                 }
                 $state = new State($stateName, $stateFullName, $stateAreaKm2, $stateCodeIbge);
 
-                $zipCode = new ZipCode($number, $district, $address, $complement, $city, $state);
+                $zipCode = new ZipCode($number, $district, $address, $complement, $city, $state, $client);
 
                 return $zipCode;
             }

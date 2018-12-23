@@ -13,7 +13,7 @@ class State
      * @param null $areaKm
      * @param null $codeIbge
      */
-    public function __construct($name = null, $fullName = null,$areaKm = null, $codeIbge = null)
+    public function __construct($name = null, $fullName = null, $areaKm = null, $codeIbge = null)
     {
         $this->areaKm = $areaKm;
         $this->codeIbge = $codeIbge;

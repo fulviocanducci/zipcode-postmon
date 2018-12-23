@@ -8,6 +8,7 @@ class ZipCode
     private $city;
     private $complement;
     private $address;
+    private $client;
 
     /**
      * ZipCode constructor.
@@ -17,7 +18,7 @@ class ZipCode
      * @param City $city
      * @param State $state
      */
-    public function __construct($number, $district, $address, $complement, City $city, State $state)
+    public function __construct($number, $district, $address, $complement, City $city, State $state, $client)
     {
         $this->district = $district;
         $this->city = $city;
@@ -25,6 +26,7 @@ class ZipCode
         $this->state = $state;
         $this->complement = $complement;
         $this->address = $address;
+        $this->client = $client;
     }
 
     /**
@@ -39,6 +41,7 @@ class ZipCode
             'city' => $this->city->toArray(),
             'complement' => $this->complement,
             'address' => $this->address,
+            'client' => $this->client
         );
     }
 
@@ -56,6 +59,14 @@ class ZipCode
     public function getDistrict()
     {
         return $this->district;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getClient()
+    {
+        return $this->client;
     }
 
     /**
