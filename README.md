@@ -4,6 +4,7 @@
 
 [![Build Status](https://travis-ci.org/fulviocanducci/zipcode-postmon.svg?branch=master)](https://travis-ci.org/fulviocanducci/zipcode-postmon)
 [![](https://img.shields.io/packagist/v/canducci/zipcodepostmon.svg)](https://packagist.org/packages/canducci/zipcodepostmon)
+[![](https://img.shields.io/packagist/dt/canducci/zipcodepostmon.svg)](https://packagist.org/packages/canducci/zipcodepostmon)
 
 ## Required setup
 
